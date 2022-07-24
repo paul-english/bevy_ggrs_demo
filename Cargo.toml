@@ -7,15 +7,15 @@ edition = "2021"
 
 [dependencies]
 bevy_asset_loader = "0.8"
-bevy = "0.6"
+bevy = "0.7"
 bytemuck = {version="1.7.3", features= ["derive"]}
-ggrs = { version = "0.9", features=["sync-send"] }
-bevy_ggrs = "0.9"
-matchbox_socket = { git = "https://github.com/johanhelsing/matchbox", features = ["ggrs-socket"] }
+ggrs = { git = "https://github.com/gschup/ggrs", features=["sync-send"], rev="37b83c3478114e2876c133f255bc00b29c6af796" }
+bevy_ggrs = {git = "https://github.com/gschup/bevy_ggrs", rev="928376df6b37f391ef6593e0355ba5a737ec1492"}
+matchbox_socket = { git = "https://github.com/johanhelsing/matchbox", features = ["ggrs-socket"], rev="50c1e69e9f1c0f1e07e0ffd5161db0ce3f9267b5" }
 log = "0.4"
 
 [target.'cfg(target_arch = "wasm32")'.dependencies]
-ggrs = {  version = "0.9", features=["sync-send", "wasm-bindgen"]}
-bevy_ggrs = { version = "0.9", features=["wasm-bindgen"]}
+ggrs = { git = "https://github.com/gschup/ggrs", features=["sync-send", "wasm-bindgen"], rev="37b83c3478114e2876c133f255bc00b29c6af796" }
+bevy_ggrs = {git = "https://github.com/gschup/bevy_ggrs", features=["wasm-bindgen"], rev="928376df6b37f391ef6593e0355ba5a737ec1492"}
 bevy-web-resizer = "0.1.0"
 web-sys = "0.3"
